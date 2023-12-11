@@ -16,6 +16,7 @@ options = webdriver.ChromeOptions()
 options.add_experimental_option("detach", True) #-------- It is used in order to stop browser being closed automatically.
 
 driver = webdriver.Chrome(service=driver_service, options=options) 
+driver.maximize()
 
 
 driver.get("https://dev.groundmetrx.com/masterAdmin/login")
