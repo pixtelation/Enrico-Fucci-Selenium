@@ -14,14 +14,15 @@ options.add_experimental_option("detach", True) #-------- It is used in order to
 driver = webdriver.Chrome(service=driver_service, options=options) 
 driver.maximize_window()
 
+driver.implicitly_wait(30)
 
-driver.get("https://dev.groundmetrx.com/")
-driver.find_element(By.XPATH, "//a[normalize-space()='Log in']").click()
-driver.find_element(By.XPATH, "//input[@id='exampleInputUsername']").send_keys("DHL")
-driver.find_element(By.XPATH, "//input[@id='exampleInputPassword1']").send_keys("DHL@123456")
-driver.find_element(By.XPATH, "//button[normalize-space()='Login']").click()
-
-driver.find_element(By.XPATH, "//a[normalize-space()='Administration']").click()
-driver.find_element(By.XPATH, "//a[normalize-space()='Employees']").click()
+driver.get("https://walkfitplatinum.com/")
+driver.find_element(By.LINK_TEXT, "Order Now").click()
+driver.find_element(By.XPATH, "(//span[@class='variable-item-span variable-item-span-button'])[2]").click()
+driver.find_element(By.XPATH, "(//span[@class='variable-item-span variable-item-span-button'])[4]").click()
+driver.find_element(By.XPATH, "//button[@class='single_add_to_cart_button button alt']").click()
+driver.find_element(By.XPATH, "//a[@class='button checkout wc-forward']").click()
+driver.find_element(By.XPATH, "//div[@data-button-text='true']").click()
+driver.find_element(By.LINK_TEXT, "No Thank You").click()
 
 

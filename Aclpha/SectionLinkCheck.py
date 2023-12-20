@@ -17,24 +17,27 @@ driver.maximize_window()
 
 
 
-driver.get("https://dev.groundmetrx.com/")   
-driver.find_element(By.XPATH, "//a[normalize-space()='Log in']").click()
-driver.find_element(By.XPATH, "//input[@id='exampleInputUsername']").send_keys("DHL")
-driver.find_element(By.XPATH, "//input[@id='exampleInputPassword1']").send_keys("DHL@123456")
-driver.find_element(By.XPATH, "//button[normalize-space()='Login']").click()
+driver.get("https://aquatruwater.com/blog/")   
+# driver.find_element(By.XPATH, "//a[normalize-space()='Log in']").click()
+# driver.find_element(By.XPATH, "//input[@id='exampleInputUsername']").send_keys("DHL")
+# driver.find_element(By.XPATH, "//input[@id='exampleInputPassword1']").send_keys("DHL@123456")
+# driver.find_element(By.XPATH, "//button[normalize-space()='Login']").click()
 
-driver.find_element(By.XPATH, "//a[normalize-space()='Administration']").click()
-driver.find_element(By.XPATH, "//a[normalize-space()='Employees']").click()
+# driver.find_element(By.XPATH, "//a[normalize-space()='Administration']").click()
+# driver.find_element(By.XPATH, "//a[normalize-space()='Employees']").click()
 
 
 
-links = driver.find_elements(By.XPATH, "//div[@class='dashbord-common-right-content multitabs_page']")
+# links = driver.find_elements(By.XPATH, "//div[@class='dashbord-common-right-content multitabs_page']")
+
+links = driver.find_elements(By.XPATH, "//div[@class='large-9 col']") 
+
 
 for link in links:
         # Get the href attribute of the link
         href = link.get_attribute("href")
 
-        # Print or perform further actions based on the href value
-        print(f"Link Text: {link.text}")
-        print(f"Link Href: {href}")
+        # # Print or perform further actions based on the href value
+        # print(f"Link Text: {link.text}")
+        print(href)
 
