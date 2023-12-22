@@ -26,17 +26,18 @@ driver = webdriver.Chrome(service=driver_service, options=options)
 driver.maximize_window()
 
 #provide website url here
-d= driver.get("https://dev.groundmetrx.com/")
-response = requests.get(d)
-print(response.status_code)
+d = driver.get("https://dev-test.groundmetrx.com/")
 
-# driver.find_element(By.XPATH, "//a[normalize-space()='Log in']").click()
-# driver.find_element(By.XPATH, "//input[@id='exampleInputUsername']").send_keys("DHL")
-# driver.find_element(By.XPATH, "//input[@id='exampleInputPassword1']").send_keys("DHL@123456")
-# driver.find_element(By.XPATH, "//button[normalize-space()='Login']").click()
 
-# links = driver.find_elements(By.TAG_NAME,"a")
+driver.find_element(By.XPATH, "//a[normalize-space()='Log in']").click()
+driver.find_element(By.XPATH, "//input[@id='exampleInputUsername']").send_keys("DHL")
+driver.find_element(By.XPATH, "//input[@id='exampleInputPassword1']").send_keys("DHL@123456")
+driver.find_element(By.XPATH, "//button[normalize-space()='Login']").click()
 
-# for link in links:
-#     ref = link.get_attribute('href') 
-#     print(ref)
+links = driver.find_elements(By.TAG_NAME,"a")
+
+for link in links:
+ ref = link.get_attribute('href') 
+ response = requests.get(ref) 
+ print((ref),('-'),response.status_code)
+ 
